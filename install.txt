@@ -1,0 +1,27 @@
+npm install -g yo
+npm install -g bower
+npm install -g grunt-cli
+npm install -g generator-angular
+----
+yo angular AngularJSExam
+N
+n
+Y
+<Enter>
+y
+y
+----
+npm install
+bower install
+grunt serve
+----
+grunt build
+dist 폴더의 파일과 폴더를 모두 복사
+웹서버의 wwwroot에 붙여넣기
+웹브라우저로 접속 확인
+
+$ yo angular:controller login
+$ yo angular:controller signup
+$ yo angular:controller user-list
+$ yo angular:controller user-detail
+$ yo angular:controller user-withdraw
