@@ -1,86 +1,68 @@
-<!-- <div class="jumbotron">
-  <h1>'Hello, 'Hello!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" href="login:">LOGIN<span class="glyphicon glyphicon-ok"></span></a></p>
-</div> -->
 
-<!--start-ckeckout-->
-<div class="ckeckout">
-  <div class="container">
-    <div class="ckeckout-top">
-    <div class="cart-items heading">
-     <h1>컵라면투게더 Ranking</h1>
-      <script>$(document).ready(function(c) {
-        $('.close1').on('click', function(c){
-          $('.cart-header').fadeOut('slow', function(c){
-            $('.cart-header').remove();
-          });
-          });	  
-        });
-       </script>
-    <script>$(document).ready(function(c) {
-        $('.close2').on('click', function(c){
-          $('.cart-header1').fadeOut('slow', function(c){
-            $('.cart-header1').remove();
-          });
-          });	  
-        });
-       </script>
-       <script>$(document).ready(function(c) {
-        $('.close3').on('click', function(c){
-          $('.cart-header2').fadeOut('slow', function(c){
-            $('.cart-header2').remove();
-          });
-          });	  
-        });
-       </script>
-      
-    <div class="in-check" >
-      <ul class="unit">
-        <li><span>Ramen</span></li>
-        <li><span>Warter</span></li>		
-        <li><span>Rice</span></li>
-        <li><span>Bread</span></li>
-        <li><span>Good</span></li>
-        <li><span>Reply</span></li>
-        <div class="clearfix"> </div>
-      </ul>
-      <ul class="cart-header simpleCart_shelfItem">
-        <div class="close1"> </div>
-        <li class="ring-in"><img src="images/r01.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/w01.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/c01.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/b01.jpg" class="img-responsive" alt=""></li>
-        <li><span class="item_price">100</span></li>
-        <li><span class="item_price">100</span></li>				
-        <div class="clearfix"> </div>
-      </ul>
-      <ul class=" cart-header1 simpleCart_shelfItem">
-        <div class="close2"> </div>
-        <li class="ring-in"><img src="images/r02.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/w02.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/c02.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/b02.jpg" class="img-responsive" alt=""></li>
-        <li><span class="item_price">100</span></li>
-        <li><span class="item_price">100</span></li>				
-      <div class="clearfix"> </div>
-      </ul>
-      <ul class="cart-header2 simpleCart_shelfItem">
-        <div class="close3"> </div>
-        <li class="ring-in"><img src="images/r03.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/w03.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/c03.jpg" class="img-responsive" alt=""></li>
-        <li class="ring-in"><img src="images/b03.jpg" class="img-responsive" alt=""></li>
-        <li><span class="item_price">100</span></li>
-        <li><span class="item_price">100</span></li>					
-      <div class="clearfix"> </div>
-      </ul>
+<div class="main-agileinfo slider ">
+    <div class="items-group">
+        <div class="item agileits-w3layouts">
+            <div class="block text main-agileits"> 
+                <div class="agile-row">
+                    <h1>Ranking</h1>
+                </div>
+                
+            </div>
+        </div>
     </div>
-    </div>  
-   </div>
-  </div>
 </div>
-<!--end-ckeckout-->
+
+
+  <div class="container">
+
+        <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>순 위</th>
+                            <th>라 면</th>
+                            <th>음 료</th>
+                            <th>밥</th>
+                            <th>빵</th>
+                            <th>추 천</th>
+                            <th>댓 글</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                  <tr ng-repeat="obj in rankList">
+                    <td><button type="button" class="btn btn-default" ng-click="">{{obj.rank}}</button></td>		
+                    <td><img src="../images/r{{obj.ramen}}.jpg" class="img-responsive" alt=""></li>
+                    <td><img src="../images/w{{obj.water}}.jpg" class="img-responsive" alt=""></li>
+                    <td><img src="../images/c{{obj.rice}}.jpg" class="img-responsive" alt=""></li>
+                    <td><img src="../images/b{{obj.bread}}.jpg" class="img-responsive" alt=""></li>
+                    <td><button type="button" class="btn button" ng-click="goodAdd(obj.seq)">{{obj.gcnt}}</button></td>		
+                    <td><button type="button" class="btn btn-danger" ng-click="replyPage(obj.seq)">{{obj.recnt}}</button></td>			
+                  </tr>
+              </tbody>
+              </table>
+        </div>
+  </div>
+
+<!-- Modal -->
+<div id="message" class="modal fade" role="dialog" >
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Information</h4>
+            </div>
+            <div class="modal-body">
+                    <div class="agile-row">
+                            <h1>추천하셨으니~ 이제 드셔봐야겠죠? 그리고 댓글까지~OK?</h1>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">O K</button>
+                <!-- <button type="submit" class="btn btn-primary" ng-click="saveReply((ori_seq),contxt)">등 록</button> -->
+           
+            </div>
+            </div>
+    
+        </div>
+    </div>
+    

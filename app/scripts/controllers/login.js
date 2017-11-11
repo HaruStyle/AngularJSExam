@@ -23,6 +23,7 @@ angular.module('angularJsexamApp')
     }
     $scope.submitLogin = function() {
     	sessionService.login($scope.login, function(res) {
+        window.alert("★오늘의 이벤트 >> 컵라면투게더 App 시연을 보시고 호응을 해주시면 동일하게 응해드리겠습니다^^" );
     		$state.go('main');
     	});
     }

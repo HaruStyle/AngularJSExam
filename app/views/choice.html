@@ -1,0 +1,148 @@
+<div class="main-agileinfo slider">
+    <div class="items-group">
+        <div class="item agileits-w3layouts">
+            <div class="block text main-agileits"> 
+                <span class="circleLight"></span> 
+                <!-- login form -->
+                <div class="login-form loginw3-agile"> 
+                    <div class="agile-row">
+                        <h1>당신의 선택은</h1> 
+                        <div class="login-agileits-top"> 	
+                            <div style="border: 0px solid ; float: left; padding: 2px; width: 50%; text-align:center;">
+                                <button type="button" class="btn"  style="border: 0px solid ; padding: 2px; width: 100%; text-align:center;" 
+                                data-toggle="modal" data-target="#choiceModal" ng-click="choicePage('r')">라면 선택</button>
+                            </div>
+                            <div style="border: 0px solid ; float: left; padding: 2px; width: 50%; text-align:center;">
+                                <button type="button" class="btn"  style="border: 0px solid ; padding: 2px; width: 100%; text-align:center;" 
+                                data-toggle="modal" data-target="#choiceModal" ng-click="choicePage('w')">음료선택</button>
+                            </div>
+                            <div style="border: 0px solid ; float: left; padding: 2px; width: 50%; text-align:center;">
+                                <button type="button" class="btn"  style="border: 0px solid ; padding: 2px; width: 100%; text-align:center;" 
+                                data-toggle="modal" data-target="#choiceModal" ng-click="choicePage('c')">밥 선택</button>
+                            </div>
+                            <div style="border: 0px solid ; float: left; padding: 2px; width: 50%; text-align:center;">
+                                <button type="button" class="btn"  style="border: 0px solid ; padding: 2px; width: 100%; text-align:center;" 
+                                data-toggle="modal" data-target="#choiceModal" ng-click="choicePage('b')">빵 선택</button>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div ng-repeat="obj in choiceKList" ng-init="setTotals(obj)">
+        <div ng-switch on="{{$index}}">
+            <div ng-switch-when="0">
+                <div ng-switch on="{{obj.kind_no}}">
+                    <div ng-switch-when="99">
+                        <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                            <img src="../images/r99.jpg" width="100" height="110" class="" alt="">
+                        </div>
+                    </div>
+                    <div ng-switch-default>
+                        <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                            <img src="../images/r{{obj.kind_no}}.jpg" width="110" height="110" float:left class="" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="1">
+                    <div ng-switch on="{{obj.kind_no}}">
+                        <div ng-switch-when="99">
+                            <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                                <img src="../images/w99.jpg" width="100" height="110" class="" alt="">
+                            </div>
+                        </div>
+                        <div ng-switch-default>
+                            <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                                <img src="../images/w{{obj.kind_no}}.jpg" width="100" height="110" float:left class="" alt="">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div ng-switch-when="2">
+                    <div ng-switch on="{{obj.kind_no}}">
+                        <div ng-switch-when="99">
+                            <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                                <img src="../images/c99.jpg" width="100" height="110" class="" alt="">
+                            </div>
+                        </div>
+                        <div ng-switch-default>
+                            <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                                <img src="../images/c{{obj.kind_no}}.jpg" width="100" height="110" float:left class="" alt="">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div ng-switch-when="3">
+                    <div ng-switch on="{{obj.kind_no}}">
+                        <div ng-switch-when="99">
+                            <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                                <img src="../images/b99.jpg" width="100" height="110" class="" alt="">
+                            </div>
+                        </div>
+                        <div ng-switch-default>
+                            <div style="border: 0px solid; float: left; width: 25%; padding:5px;">
+                                <img src="../images/b{{obj.kind_no}}.jpg" width="100" height="110" float:left class="" alt="">
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div ng-switch-default>
+            </div>
+        </div>
+</div>
+<br>
+
+<div style="border: 0px solid ; padding: 2px; width: 100%; text-align:center;">
+    <button type="button" class="btn btn-danger" style="border: 0px solid ; padding: 2px; width: 80%; text-align:center;" ng-click="saveChoice(choiceKList)">Total : [ {{ totalSum | number : 0}} ]   등 록</button>
+</div>
+<!-- Modal -->
+<div id="choiceModal" class="modal fade" role="dialog" >
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">당신의 선택</h4>
+        </div>
+        <div class="modal-body">
+                <table class="table">
+                        <thead>
+                                <tr>
+                                    <th>사진</th>
+                                    <th>상품명</th>
+                                    <th>특징</th>
+                                    <th>가격</th>
+                                    <th>선택</th>
+                                </tr>
+                            </thead>
+                        <tbody>
+                            <p ng-init="product={}"/><p ng-init="$parent.selectedObj={}"/>
+                          <tr ng-repeat="product in choiceList">
+                            <!-- $parent.selectedObj -->
+                            <td><img src="../images/{{product.kind}}{{product.kind_no}}.jpg" width="50" height="60"  class="" alt=""></td>
+                            <td>{{product.name}}"</td>
+                            <td>{{product.detail}}"</td>
+                            <td>{{product.price | number : 0}} "</td>
+                            <td><input type="radio" ng-model="$parent.selectedObj" ng-value="product" class="option-input radio"><a>        </a></td>
+                            
+                          </tr>
+                        </tbody>
+                    </table>
+        </div>
+        <div class="modal-footer">
+            <div style="border: 0px solid; float: left; width: 100%; padding:5px;">
+            <th style="text-align:center">▶ {{selectedObj.name}} [{{selectedObj.price | number : 0}}]</th>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <!-- <button type="submit" class="btn btn-primary" ng-click="saveReply((ori_seq),contxt)">등 록</button> -->
+            <button type="submit" class="btn btn-primary" ng-click="choiceKind()" data-dismiss="modal">선 택</button>
+            </div>
+        </div>
+        </div>
+
+    </div>
+</div>

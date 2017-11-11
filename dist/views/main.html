@@ -1,23 +1,56 @@
-<div class="jumbotron">
-  <h1>'Hello, 'Hello!</h1>
-  <p class="lead">
-    <img src="images/yeoman.c582c4d1.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<div class="section">
+  <div class="container">
+    <div class="title">
+      <h1>컵라면투게더 Ranking</h1>
+    </div>
+        <!-- <div class="in-check" >
+          <ul class="unit"> -->
+        <div class="rank">
+            <ul>
+                <li><span>순위</span></li>
+                <li><span>라면</span></li>
+                <li><span>음료</span></li>		
+                <li><span>밥</span></li>
+                <li><span>빵</span></li>
+                <li><span>추천</span></li>
+                <li><span>댓글</span></li>
+              </ul>
+        </div>
+          <div class="row">
+                  <table class="table">
+                  <tbody>
+                    <tr ng-repeat="obj in rankList">
+                      <td><button type="button" class="btn btn-default" ng-click="">{{obj.rank}}</button></td>		
+                      <td><img src="images/r{{obj.ramen}}.jpg" class="img-responsive" alt=""></li>
+                      <td><img src="images/w{{obj.water}}.jpg" class="img-responsive" alt=""></li>
+                      <td><img src="images/c{{obj.rice}}.jpg" class="img-responsive" alt=""></li>
+                      <td><img src="images/b{{obj.bread}}.jpg" class="img-responsive" alt=""></li>
+                      <td><button type="button" class="btn button" ng-click="">{{obj.gcnt}}</button></td>		
+                      <td><button type="button" class="btn btn-danger" ng-click="replyPage(obj.seq)">{{obj.recnt}}</button></td>			
+                    </tr>
+                </tbody>
+                </table>
+          </div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+          
+            <!-- Modal -->
+            <div id="myModal" class="modal fade" role="dialog">
+              <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">User Info</h4>
+                  </div>
+                  <div class="modal-body">
+                    <table class="table"><tr><td>ID</td><td>{{userInfo.id}}</td></tr><tr><td>Name</td><td>{{userInfo.name}}</td></tr><tr><td>Age</td><td>{{userInfo.age}}</td></tr></table>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+              </div>
+            </div>
+  </div>
 </div>

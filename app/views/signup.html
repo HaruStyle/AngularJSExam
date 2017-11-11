@@ -1,18 +1,29 @@
-<div class="jumbotron">
-  <h1>Signup</h1>
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="form-group">
-      <label for="user_name">Name:</label>
-      <input type="text" class="form-control" ng-model="name" id="user_name">
-    </div>
-    <div class="form-group">
-      <label for="user_age">Age:</label>
-      <input type="text" class="form-control" ng-model="age" id="user_age">
+<div class="main-agileinfo slider ">
+    <div class="items-group">
+      <div class="item agileits-w3layouts">
+        <div class="block text main-agileits"> 
+          <span class="circleLight"></span> 
+          <!-- login form -->
+          <div class="login-form loginw3-agile"> 
+            <div class="agile-row">
+              <h1>회원가입</h1> 
+              <div class="login-agileits-top"> 	
+                <form name="login-form" ng-submit="saveUserInfo()"> 
+                  <p>User Id</p>
+                  <input id="user_id" type="text" name="user_id" class="form-control" placeholder="User Id" ng-model="user_id" required>
+                  <p>Password</p>
+                  <input id="password" type="password" name="password" class="form-control" placeholder="password" ng-model="password" required>   
+                  <p>Name</p>
+                  <input id="name" type="text" name="name" class="form-control" placeholder="Name" ng-model="name" required>
+                  <p>Age</p>
+                  <input id="age" type="number" name="age" class="form-control" placeholder="Age" ng-model="age" required>   
+                  <p/>
+                  <input type="submit" value="회원 가입" class="btn"> 
+                </form> 	
+              </div> 
+            </div>  
+          </div>   
+        </div>
+      </div>   
     </div>
   </div>
-  <div class="col-sm-6">
-    <button type="button" class="btn btn-primary" ng-click="saveUserInfo()">회원 가입</button>
-  </div>
-</div>

@@ -1,23 +1,57 @@
-<div class="jumbotron">
-  <h1>Login</h1>
-  <p class="lead">
-    <img src="images/yeoman.c582c4d1.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+<!-- <div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h3 class="text-center">LOGIN</h3>
+    <form name="loginForm" ng-submit="submitLogin()">
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-envelope-o"></i>
+          </span>
+          <input id="login-userid" type="text" name="user_id" class="form-control input-lg" placeholder="User Id" ng-model="login.user_id" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="input-group">
+          <span class="input-group-addon">
+            <i class="fa fa-asterisk"></i>
+          </span>
+          <input id="login-password" type="password" name="password" class="form-control input-lg" placeholder="Password" ng-model="login.password" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block btn-shadow">Login</button>
+    </form>
+  </div>
+</div> -->
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
+<div class="main-agileinfo slider ">
+  <div class="items-group">
+    <div class="item agileits-w3layouts">
+      <div class="block text main-agileits"> 
+        <span class="circleLight"></span> 
+        <!-- login form -->
+        <div class="login-form loginw3-agile"> 
+          <div class="agile-row">
+            <h1>로그인</h1> 
+            <div class="login-agileits-top"> 	
+              <form name="login-form" ng-submit="submitLogin()"> 
+                <p>User Id</p>
+                <input id="login-userid" type="text" name="user_id" class="form-control" placeholder="User Id" ng-model="login.user_id" required>
+                <p>Password</p>
+                <input id="login-password" type="password" name="password" class="form-control" placeholder="Password" ng-model="login.password" required>   
+                <p/>
+                <input type="submit" value="Login" class="btn"> 
+              </form> 	
+            </div> 
+            <!-- <div class="login-agileits-bottom wthree"> 
+              <h6><a href="#">Forgot password?</a></h6>
+            </div>  
+            -->
+          </div>  
+        </div>   
+      </div>
+      <!-- <div class="w3lsfooteragileits">
+        <p> &copy; 2017 Shadow Login Form. All Rights Reserved | Design by <a href="http://w3layouts.com" target="=_blank">W3layouts</a></p>
+      </div>  -->
+    </div>   
+  </div>
+</div>	 

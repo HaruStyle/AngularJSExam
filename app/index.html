@@ -14,11 +14,13 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css"  type="text/css" media="all" />
+    
     <!-- web font --> 
     <link href="//fonts.googleapis.com/css?family=Cormorant+Garamond:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
     <link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet">
     <!-- //web font -->
     <!-- endbuild -->
+
   </head>
   <body ng-app="angularJsexamApp">
     <!--[if lte IE 8]>
@@ -27,6 +29,7 @@
 
     <!-- Add your site or application content here -->
     <div class="navbar navbar-default navbar-static" ng-include="'/views/menu.html'"></div>
+    <!-- <div class="navbar navbar-default navbar-static" ng-include="'/views/menu.html'"></div> -->
     <div ui-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -60,12 +63,18 @@
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/choice.js"></script>
         <script src="scripts/controllers/signup.js"></script>
         <script src="scripts/controllers/user-list.js"></script>
         <script src="scripts/controllers/user-detail.js"></script>
         <script src="scripts/controllers/user-withdraw.js"></script>
+        <script src="scripts/controllers/rank-detail.js"></script>
         <script src="scripts/services/session-info.js"></script>
         <script src="scripts/services/session-service.js"></script>
         <!-- endbuild -->
+
+
+        <!-- use strict 준수하지 않아서 빌드에 포함 불가 -->
+
 </body>
 </html>
